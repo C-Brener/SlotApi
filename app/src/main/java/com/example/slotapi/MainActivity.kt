@@ -17,6 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.SubcomposeAsyncImage
 import com.example.slotapi.ui.theme.SlotApiTheme
 
 class MainActivity : ComponentActivity() {
@@ -89,7 +90,12 @@ fun ScaffoldTopBar() {
 
 @Composable
 fun ScaffoldImage() {
-    
+    SubcomposeAsyncImage(
+        modifier = Modifier.fillMaxWidth(),
+        model = "https://www.alura.com.br/assets/img/alura-share.1647533642.png",
+        contentDescription = null,
+        loading = { CircularProgressIndicator() }
+    )
 }
 
 @Preview(showSystemUi = true)
